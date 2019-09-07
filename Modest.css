@@ -6,7 +6,9 @@
     --green: #23b7a4;
     --gray-light: #e1e6ea;
   }
-
+a {
+    text-decoration: none;
+}
 body {
     margin: 0px;
 }
@@ -49,16 +51,22 @@ body {
     border:1px solid var(--gray);
     padding: 40px;
 }
+.c-card--black{
+    background-color: var(--dark);
+}
 .c-card__title{
     text-transform: uppercase;
     font-family: 'Quattrocento Sans';
     font-size: 36px;
     font-weight: 700;
     padding-left: 15px;
-    margin-top: 20px;
+
     color: var(--black);
     border-left: 8px solid var(--gray-light);
 
+}
+.c-card__title--white{
+    color:var(--white);
 }
 
 .c-card__text{
@@ -67,12 +75,20 @@ body {
     padding-bottom: 20px;
 
 }
+.c-card__text--s{
+    font-size:14px;
+}
 
 .c-card__subtitle {
     text-transform: uppercase;
     font-family: 'Quattrocento Sans';
     font-size:18px;
     font-weight: 700;
+    transition: color 0.3s ease-in;
+}
+
+.c-card__subtitle--s{
+    font-size: 16px;
 }
 .c-card__grid{
     display: flex;
@@ -106,20 +122,104 @@ body {
     opacity: 0.7;
 }
 
-.workers-grid, .workers-grid__c, .workers-grid__header {
+.workers-grid,
+.workers-grid__c,
+.workers-grid__header,
+.work-grid,
+.work-grid__c,
+.services-grid,
+.services-grid__c {
+    position: relative;
     display: flex;
     flex-direction: column;
+    margin-top: 20px;
 }
 
 .workers-grid__c{
     position: relative;
 }
 .workers__icon-grid{
+    visibility: hidden;
+    opacity: 0;
+    transition: opacity 0.3s ease-in,
+                visibility 0.3s;
     position: absolute;
     top:50%;
     left:50%;
-    transform: translate(-50%, -50%)
+    transform: translate(-50%, -50%);
+    display: flex;
+    flex-direction: row;
 }
+.workers__icon-grid .fa{
+    background-color: var(--dark);
+    padding: 15px;
+    margin: 2px;
+}
+.workers-grid__image {
+    position: relative;
+}
+.workers-grid__image img{
+    width: 100%;
+    height: 100%;
+}
+
+.workers-grid__header{
+    transition: background-color 0.3s ease-in;
+    background-color: var(--gray-light);
+    padding: 20px;
+    margin-top:0px;
+}
+
+.workers-grid__header .c-card__text{
+    padding: 0px;
+    color: var(--gray);
+    transition: color 0.3s ease-in;
+}
+
+.workers-grid__c:hover .workers__icon-grid{
+    visibility: visible;
+    opacity: 1;
+    transition: opacity 0.4s ease-in;
+}
+.workers-grid__c:hover .workers-grid__header {
+    background-color: var(--dark);
+    transition: background-color 0.3s ease-in;
+
+}
+.workers-grid__c:hover .c-card__text{
+    color: var(--white);
+    transition: color 0.3s ease-in;
+}
+.workers-grid__c:hover .c-card__subtitle{
+    color: var(--white);
+    transition: color 0.3s ease-in;
+}
+
+.work-grid__image {
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+.work-grid__c .c-card__subtitle{
+    position: absolute;
+    background-color: var(--black);
+    color: var(--white);
+    padding: 10px 0px;
+    bottom: 0px;
+    width: 100%;
+
+}
+
+
+
+
+
+.services-grid__c{
+    text-align: center;
+}
+
+
+
 
 .ghost-button {
 	font-family: Amble;
@@ -137,7 +237,7 @@ body {
 	outline: none;
 	text-decoration: none;
 	transition: background-color 0.2s ease-out,
-				color 0.2s ease-out;
+                border 0.3s ease-out;
   }
   .ghost-button:hover,
   .ghost-button:active {
