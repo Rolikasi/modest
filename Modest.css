@@ -20,6 +20,7 @@ body {
     overflow: hidden;
     display: flex;
     flex-direction: column;
+    position: relative;
 }
 .main-c__c{
     position: absolute;
@@ -48,6 +49,10 @@ body {
 }
 
 .c-card{
+    display: flex;
+    flex-direction: column;
+    position: relative;
+
     border:1px solid var(--gray);
     padding: 40px;
 }
@@ -72,11 +77,15 @@ body {
 .c-card__text{
     font-family: "Open Sans";
     font-size: 16px;
-    padding-bottom: 20px;
+    margin: 10px;
 
 }
 .c-card__text--s{
     font-size:14px;
+}
+
+.c-card__text--white{
+    color: var(--white);
 }
 
 .c-card__subtitle {
@@ -89,6 +98,17 @@ body {
 
 .c-card__subtitle--s{
     font-size: 16px;
+}
+
+.c-card__subtitle--xs{
+    font-size: 14px;
+}
+
+.c-card__subtitle--L{
+    font-size: 20px;
+}
+.c-card__subtitle--white{
+    color:var(--white);
 }
 .c-card__grid{
     display: flex;
@@ -128,16 +148,19 @@ body {
 .work-grid,
 .work-grid__c,
 .services-grid,
-.services-grid__c {
+.services-grid__c,
+.features-grid,
+.features-grid__c,
+.contact-grid,
+.contact-grid__c,
+.form-grid {
     position: relative;
     display: flex;
     flex-direction: column;
     margin-top: 20px;
 }
 
-.workers-grid__c{
-    position: relative;
-}
+
 .workers__icon-grid{
     visibility: hidden;
     opacity: 0;
@@ -157,10 +180,13 @@ body {
 }
 .workers-grid__image {
     position: relative;
+    display: flex;
+
 }
 .workers-grid__image img{
+    object-fit: fill;
     width: 100%;
-    height: 100%;
+
 }
 
 .workers-grid__header{
@@ -171,6 +197,7 @@ body {
 }
 
 .workers-grid__header .c-card__text{
+    margin:0px;
     padding: 0px;
     color: var(--gray);
     transition: color 0.3s ease-in;
@@ -196,30 +223,100 @@ body {
 }
 
 .work-grid__image {
+    opacity: 1;
+    transition: opacity 0.3s ease-out;
     position: relative;
     width: 100%;
     height: 100%;
 }
 .work-grid__c .c-card__subtitle{
+    opacity: 0;
     position: absolute;
     background-color: var(--black);
     color: var(--white);
-    padding: 10px 0px;
+    padding: 15px 0px;
     bottom: 0px;
     width: 100%;
-
+    transition: opacity 0.3s ease-out;
 }
 
+.work-grid__c .c-card__subtitle span{
+    margin-left: 20px;
+}
 
+.work-grid__c:hover .c-card__subtitle{
+    opacity: 1;
+    transition: opacity 0.3s ease-in;
+}
 
+.work-grid__c:hover .work-grid__image{
+    opacity: 0.7;
+    transition: opacity 0.3s ease-in;
+}
+
+.work-grid__c:hover .work-grid__image{
+    opacity: 0.7;
+    transition: opacity 0.3s ease-in;
+}
+
+#work {
+    padding-bottom: 110px;
+}
+.c-card .ghost-button{
+    position: absolute;
+    top: 97%;
+
+}
 
 
 .services-grid__c{
     text-align: center;
 }
+.services-grid__c div{
+    margin: 10px;
+}
 
 
+.features-grid__image{
+    position: relative;
+    width: 100%;
+    opacity: 1;
+    transition: opacity 0.3s ease-out;
+    padding-bottom: 20px;
+}
+.features-grid__c> .c-card__text{
+    margin:15px 0px;
+}
 
+.features-grid__c:hover .features-grid__image{
+    opacity: 0.7;
+    transition: opacity 0.3s ease-in;
+
+}
+.features-grid__c:hover .c-card__subtitle{
+text-decoration: underline;
+}
+
+.form-grid{
+    color: var(--gray);
+}
+.form-grid__input {
+    background-color: #eaeef1;
+    border: none;
+    resize: none;
+    border-radius: 5px;
+    min-height: 25px;
+    margin-bottom: 15px;
+}
+
+.form-grid__message{
+    min-height: 50px ;
+}
+
+.submit-button-c{
+    padding-top: 40px;
+
+}
 
 .ghost-button {
 	font-family: Amble;
@@ -247,4 +344,62 @@ body {
     transition: background-color 0.3s ease-in,
                 border 0.3s ease-in;
 				text-decoration: none;
+  }
+
+  .ghost-button--green{
+      background-color: var(--green);
+  }
+
+
+
+  @media (min-width: 768px) {
+    .workers-grid,
+    .work-grid,
+    .services-grid{
+        position: relative;
+        display: grid;
+        grid-template-columns: auto auto;
+        margin-top: 20px;
+    }
+  }
+
+
+
+
+
+
+
+  @media (min-width: 960px){
+    .work-grid,
+    .features-grid
+    {
+        position: relative;
+        display: grid;
+        grid-template-columns: auto auto auto;
+        margin-top: 20px;
+    }
+    .workers-grid{
+        grid-template-rows: auto;
+        grid-template-columns: auto auto auto auto;
+
+    }
+
+  }
+
+  @media (min-width: 1280px) {
+    .services-grid{
+        position: relative;
+        display: grid;
+        grid-template-columns: auto auto auto auto;
+        margin-top: 20px;
+    }
+
+    .contact-grid__c{
+        position: relative;
+        display: grid;
+        grid-template-columns: auto auto;
+        margin-top: 20px;
+
+    }
+
   }
