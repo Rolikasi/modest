@@ -1,6 +1,9 @@
 <!DOCTYPE html>
 <html>
 <head>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Open+Sans" />
     <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Quattrocento+Sans" />
@@ -13,29 +16,88 @@
     <header class = "header">
         <img class = 'header__logo' src="img/modest.svg" alt="">
         <div class="header__nav">
-            <a class="ghost-button ghost-button-home" href="#">Home</a>
-            <a class="ghost-button" href="#">about</a>
-            <a class="ghost-button" href="#">work</a>
-            <a class="ghost-button" href="#">team</a>
-            <a class="ghost-button" href="#">services</a>
-            <a class="ghost-button" href="#">features</a>
-            <a class="ghost-button" href="#">contact</a>
+            <a class="ghost-button--s ghost-button-home" href="#home">Home</a>
+            <a class="ghost-button--s" href="#about">about</a>
+            <a class="ghost-button--s" href="#team">team</a>
+            <a class="ghost-button--s" href="#work">work</a>
+            <a class="ghost-button--s" href="#services">services</a>
+            <a class="ghost-button--s" href="#features">features</a>
+            <a class="ghost-button--s" href="#contact">contact</a>
         </div>
     </header>
-    <section class = 'main-c'>
-        <img class="main-c__img" src="img/main.png" alt="">
-        <div class="main-c__c">
-        <span class = 'main-c__title'>welcome to our marketplace</span>
-        <span class="main-c__text">Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-            Sed nisi metus, tristique ndolor
-            non, ornare sagittis dolor. Nulla vestibulu lacus ...</span>
-        <div class ="main-c__buttons">
-            <a class="ghost-button ghost-button--L" href="#">View more</a>
-            <a class="ghost-button ghost-button--L" href="#">Video tour</a>
-        </div>
-    </div>
+
+    <section class = 'main-c' id ="home">
+
+
+            <div id="myCarousel" class="carousel slide" data-ride="carousel">
+
+
+                    <!-- Wrapper for slides -->
+                    <div class="carousel-inner">
+
+                        <div class="item active">
+                                <img class="main-c__img" src="img/main.png" alt="">
+                                <div class="main-c__c">
+                                <span class = 'main-c__title'>welcome to our marketplace</span>
+                                <span class="main-c__text">Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                                    Sed nisi metus, tristique ndolor
+                                    non, ornare sagittis dolor. Nulla vestibulu lacus ...</span>
+                                <div class ="main-c__buttons">
+                                    <a class="ghost-button ghost-button--L" href="#">View more</a>
+                                    <a class="ghost-button ghost-button--L" href="#">Video tour</a>
+                                </div>
+                        </div>
+                        </div>
+
+
+
+                        <div class="item">
+
+                                <img class="main-c__img" src="img/main.png" alt="">
+                                <div class="main-c__c">
+                                <span class = 'main-c__title'>welcome to our marketplace</span>
+                                <span class="main-c__text">Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                                    Sed nisi metus, tristique ndolor
+                                    non, ornare sagittis dolor. Nulla vestibulu lacus ...</span>
+                                <div class ="main-c__buttons">
+                                    <a class="ghost-button ghost-button--L" href="#">View more</a>
+                                    <a class="ghost-button ghost-button--L" href="#">Video tour</a>
+                                </div>
+                        </div>
+                    </div>
+
+
+
+                        <div class="item">
+                                <img class="main-c__img" src="img/main.png" alt="">
+                                <div class="main-c__c">
+                                <span class = 'main-c__title'>welcome to our marketplace</span>
+                                <span class="main-c__text">Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                                    Sed nisi metus, tristique ndolor
+                                    non, ornare sagittis dolor. Nulla vestibulu lacus ...</span>
+                                <div class ="main-c__buttons">
+                                    <a class="ghost-button ghost-button--L" href="#">View more</a>
+                                    <a class="ghost-button ghost-button--L" href="#">Video tour</a>
+                                </div>
+                        </div>
+                    </div>
+                    </div>
+
+
+
+
+                    <!-- Indicators -->
+                    <ol class="carousel-indicators">
+                        <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+                        <li data-target="#myCarousel" data-slide-to="1"></li>
+                        <li data-target="#myCarousel" data-slide-to="2"></li>
+                    </ol>
+                </div>
+
     </section>
-    <section class="c-card">
+    <section class="c-card" id='about'>
+        <div class="c-card__c">
+
         <span class = 'c-card__title'>we are modest.</span>
         <div class="c-card__grid">
 
@@ -68,8 +130,10 @@
                     </ol>
                 </div>
         </div>
+    </div>
     </section>
-    <section class="c-card">
+    <section class="c-card" id="team">
+            <div class="c-card__c">
             <span class = 'c-card__title'>meet the team.</span>
             <div class="workers-grid">
 
@@ -131,8 +195,10 @@
                                     </div>
 
             </div>
+            </div>
     </section>
     <section class="c-card c-card--black" id="work">
+        <div class="c-card__c">
             <span class = 'c-card__title c-card__title--white'>Lovely work.</span>
             <div class="work-grid">
                 <a class="work-grid__c" href=""><img class="work-grid__image" src="img/work1.png" alt="">
@@ -173,8 +239,10 @@
                     </a>
             </div>
             <a class="ghost-button ghost-button--L" href="#">Show me more</a>
+        </div>
     </section>
     <section class="c-card" id="services">
+        <div class="c-card__c">
             <span class = 'c-card__title'>What we do.</span>
             <div class="services-grid">
                     <div class="services-grid__c">
@@ -261,8 +329,10 @@
                     </div>
 
             </div>
+            </div>
     </section>
     <section class="c-card c-card--black" id="features">
+        <div class="c-card__c">
             <span class = 'c-card__title c-card__title--white'>Features.</span>
             <div class="features-grid">
                 <a class="features-grid__c" href=""><img class="features-grid__image" src="img/features1.png" alt="">
@@ -285,8 +355,10 @@
                             Nam porttitor blandit ultricies.</span>
                 </a>
             </div>
+        </div>
     </section>
     <section class="c-card" id="contact">
+        <div class="c-card__c">
             <span class = 'c-card__title'>Stay in touch.</span>
             <div class="contact-grid">
                     <div id="googleMap" style="width:100%;height:400px;"></div>
@@ -322,12 +394,14 @@
                 </form>
 
             </div>
+        </div>
         </section>
 
 
 
-        <script src="https://maps.googleapis.com/maps/api/js?key=
-        AIzaSyCw_TNz7vHQ2nEAv-L6S0EyKAz_lNxR1jQ
-        &callback=myMap"></script>
+        <script async defer
+    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCw_TNz7vHQ2nEAv-L6S0EyKAz_lNxR1jQ&callback=myMap">
+    </script>
+
 </body>
 </html>
