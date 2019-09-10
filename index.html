@@ -14,7 +14,9 @@
 
 <body>
     <header class = "header">
-        <img class = 'header__logo' src="img/modest.svg" alt="">
+            <div class="header__logo">
+                    <object  data="img/modest.svg" type="image/svg+xml"></object>
+            </div>
         <div class="header__nav">
             <a class="ghost-button--s ghost-button-home" href="#home">Home</a>
             <a class="ghost-button--s" href="#about">about</a>
@@ -43,8 +45,8 @@
                                     Sed nisi metus, tristique ndolor
                                     non, ornare sagittis dolor. Nulla vestibulu lacus ...</span>
                                 <div class ="main-c__buttons">
-                                    <a class="ghost-button ghost-button--L" href="#">View more</a>
-                                    <a class="ghost-button ghost-button--L" href="#">Video tour</a>
+                                    <a class="ghost-button" href="#">View more</a>
+                                    <a class="ghost-button" href="#">Video tour</a>
                                 </div>
                         </div>
                         </div>
@@ -60,8 +62,8 @@
                                     Sed nisi metus, tristique ndolor
                                     non, ornare sagittis dolor. Nulla vestibulu lacus ...</span>
                                 <div class ="main-c__buttons">
-                                    <a class="ghost-button ghost-button--L" href="#">View more</a>
-                                    <a class="ghost-button ghost-button--L" href="#">Video tour</a>
+                                    <a class="ghost-button" href="#">View more</a>
+                                    <a class="ghost-button" href="#">Video tour</a>
                                 </div>
                         </div>
                     </div>
@@ -76,8 +78,8 @@
                                     Sed nisi metus, tristique ndolor
                                     non, ornare sagittis dolor. Nulla vestibulu lacus ...</span>
                                 <div class ="main-c__buttons">
-                                    <a class="ghost-button ghost-button--L" href="#">View more</a>
-                                    <a class="ghost-button ghost-button--L" href="#">Video tour</a>
+                                    <a class="ghost-button" href="#">View more</a>
+                                    <a class="ghost-button" href="#">Video tour</a>
                                 </div>
                         </div>
                     </div>
@@ -99,7 +101,8 @@
         <div class="c-card__c">
 
         <span class = 'c-card__title'>we are modest.</span>
-        <div class="c-card__grid">
+        <div class="about-grid">
+            <div class="about-text">
 
             <span class="c-card__text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed nisi metus, tristique ndolor non,
                 ornare sagittis dolor. Nulla vestibulu lacus sed molestie gravida. Crferm entum  quismagna congue,
@@ -116,6 +119,7 @@
                         <a class='fa fa-vimeo' href=""></a>
                         <a class='fa fa-behance' href=""></a>
                 </div>
+            </div>
                 <div class="c-card__list">
                     <ol>
                         <li><span class="c-card__subtitle">Dedication to the customers</span>
@@ -201,44 +205,45 @@
         <div class="c-card__c">
             <span class = 'c-card__title c-card__title--white'>Lovely work.</span>
             <div class="work-grid">
+
                 <a class="work-grid__c" href=""><img class="work-grid__image" src="img/work1.png" alt="">
-                <img class="work-grid__icon" src="" alt="">
+                    <i class="fa fa-plus"></i>
                 <div class="c-card__subtitle">
                 <span>Branding</span>
                 </div>
                 </a>
                 <a class="work-grid__c" href=""><img class="work-grid__image" src="img/work2.png" alt="">
-                    <img class="work-grid__icon" src="" alt="">
+                    <i class="fa fa-plus"></i>
                     <div class="c-card__subtitle">
                     <span>Branding</span>
                     </div>
                     </a>
                 <a class="work-grid__c" href=""><img class="work-grid__image" src="img/work3.png" alt="">
-                    <img class="work-grid__icon" src="" alt="">
+                    <i class="fa fa-plus"></i>
                 <div class="c-card__subtitle">
                 <span>Branding</span>
                 </div>
                     </a>
                 <a class="work-grid__c" href=""><img class="work-grid__image" src="img/work4.png" alt="">
-                    <img class="work-grid__icon" src="" alt="">
+                    <i class="fa fa-plus"></i>
                 <div class="c-card__subtitle">
                 <span>Branding</span>
                 </div>
                     </a>
                 <a class="work-grid__c" href=""><img class="work-grid__image" src="img/work5.png" alt="">
-                    <img class="work-grid__icon" src="" alt="">
+                    <i class="fa fa-plus"></i>
                 <div class="c-card__subtitle">
                 <span>Branding</span>
                 </div>
                     </a>
                 <a class="work-grid__c" href=""><img class="work-grid__image" src="img/work6.png" alt="">
-                    <img class="work-grid__icon" src="" alt="">
+                    <i class="fa fa-plus"></i>
                 <div class="c-card__subtitle">
                 <span>Branding</span>
                 </div>
                     </a>
             </div>
-            <a class="ghost-button ghost-button--L" href="#">Show me more</a>
+            <a class="ghost-button" href="#">Show me more</a>
         </div>
     </section>
     <section class="c-card" id="services">
@@ -360,19 +365,20 @@
     <section class="c-card" id="contact">
         <div class="c-card__c">
             <span class = 'c-card__title'>Stay in touch.</span>
-            <div class="contact-grid">
-                    <div id="googleMap" style="width:100%;height:400px;"></div>
 
-                    <script>
-                    function myMap() {
-                    var mapProp= {
-                      center:new google.maps.LatLng(51.508742,-0.120850),
-                      zoom:5,
-                    };
-                    var map = new google.maps.Map(document.getElementById("googleMap"),mapProp);
-                    }
-                    </script>
-            <div class = 'contact-grid__c'>
+            <div class="contact-grid">
+                    <div class="map" id="googleMap">
+
+                            <script>
+                            function myMap() {
+                            var mapProp= {
+                              center:new google.maps.LatLng(51.508742,-0.120850),
+                              zoom:5,
+                            };
+                            var map = new google.maps.Map(document.getElementById("googleMap"),mapProp);
+                            }
+                            </script></div>
+                <div class="contact-c">
             <span class = 'c-card__subtitle c-card__subtitle--L'>contact information.</span>
             <span class="c-card__text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed nisi metus, tristique ndolor non,
                 ornare sagittis dolor. Nulla vestibulu lacus sed molestie gravida. Crferm entum  quismagna congue,
@@ -392,6 +398,7 @@
                         <div class='submit-button-c'>
                     <input type='submit' class='ghost-button ghost-button--green' value="Send message"></submit></div>
                 </form>
+
 
             </div>
         </div>

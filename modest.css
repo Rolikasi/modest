@@ -10,7 +10,7 @@
 html{
     scroll-behavior: smooth;
 }
-a {
+a, a:hover, a:active {
     text-decoration: none;
 }
 body {
@@ -27,6 +27,11 @@ body {
     padding: 15px 0px;
 
 }
+
+.header__logo{
+    display: flex;
+    top:50%;
+}
 .main-c{
     overflow: hidden;
     display: flex;
@@ -36,6 +41,11 @@ body {
 
 .main-c__img{
     object-fit: cover;
+    opacity: 0;
+}
+
+.item{
+    background: var(--dark);
 }
 
 
@@ -65,9 +75,7 @@ body {
     padding-bottom: 20px;
 }
 
-.item img {
 
-}
 .carousel-inner > .item > a > img, .carousel-inner > .item > img, .img-responsive, .thumbnail a > img, .thumbnail > img{
     max-width: unset;
     overflow: hidden;
@@ -79,7 +87,6 @@ body {
     flex-direction: column;
     position: relative;
     align-items: center;
-    border:1px solid var(--gray);
     padding: 40px;
 }
 .c-card--black{
@@ -99,7 +106,11 @@ body {
 .c-card__title--white{
     color:var(--white);
 }
-
+.about-text{
+    display: flex;
+    flex-direction: column;
+    margin: 20px 0px;
+}
 .c-card__text{
     font-family: "Open Sans";
     font-size: 16px;
@@ -136,17 +147,38 @@ body {
 .c-card__subtitle--white{
     color:var(--white);
 }
-.c-card__grid{
+.about-grid{
     display: flex;
     flex-direction: column;
     margin: 10px;
 
 }
+.c-card__list{
+    margin:10px 0px;
+}
+.c-card__list ol{
+    position: relative;
+    list-style: none;
+    counter-reset: item;
+}
 
-.c-card__list ol li{
+.c-card__list li {
+    counter-increment: item;
+    margin-bottom: 5px;
     display: flex;
     flex-direction: column;
 }
+
+.c-card__list li:before {
+    position: absolute;
+    left:-5px;
+    padding: 10px 15px;
+    content: counter(item);
+    background: var(--green);
+    color: white;
+    text-align: center;
+    display: inline-block;
+  }
 
 .header__nav{
     font-family: "Open Sans"
@@ -154,13 +186,16 @@ body {
 .main-c__buttons{
     font-family: 'Quattrocento Sans';
 }
-
+.icon-grid{
+    margin: 10px 0px;
+}
 .fa {
     background: var(--gray-light);
     text-decoration: none;
     color: #fff;
+    width: 60px;
     font-size: 20px;
-    padding: 10px;
+    padding: 20px;
     text-align: center;
 }
 .fa:hover{
@@ -180,6 +215,7 @@ body {
 .features-grid__c,
 .contact-grid,
 .contact-grid__c,
+.contact-c,
 .form-grid {
     position: relative;
     display: flex;
@@ -205,8 +241,14 @@ body {
 }
 .workers__icon-grid .fa{
     background-color: var(--dark);
-    padding: 15px;
+    padding: 10px;
+    width: 40px;
     margin: 2px;
+}
+
+.workers__icon-grid .fa:hover {
+    opacity: 1;
+    background-color: var(--gray);
 }
 .workers-grid__image {
     position: relative;
@@ -225,6 +267,8 @@ body {
     padding: 20px;
     margin-top:0px;
 }
+
+
 
 .workers-grid__header .c-card__text{
     margin:0px;
@@ -252,6 +296,11 @@ body {
     transition: color 0.3s ease-in;
 }
 
+.workers-grid__c:hover .workers-grid__image img{
+    opacity: 0.7;
+
+}
+
 .work-grid__image {
     opacity: 1;
     transition: opacity 0.3s ease-out;
@@ -269,7 +318,17 @@ body {
     width: 100%;
     transition: opacity 0.3s ease-out;
 }
-
+.fa-plus{
+    font-size:20px;
+    font-weight: 100;
+    opacity: 0;
+    position: absolute;
+    background: none;
+    top:42%;
+    left:50%;
+    transform: translate(-50%, -50%);
+    transition: opacity 0.3s ease-out;
+}
 .work-grid__c .c-card__subtitle span{
     margin-left: 20px;
 }
@@ -285,6 +344,11 @@ body {
 }
 
 .work-grid__c:hover .work-grid__image{
+    opacity: 0.7;
+    transition: opacity 0.3s ease-in;
+}
+
+.work-grid__c:hover .fa-plus{
     opacity: 0.7;
     transition: opacity 0.3s ease-in;
 }
@@ -342,6 +406,7 @@ text-decoration: underline;
 
 .form-grid__message{
     min-height: 50px ;
+    height: 58%;
 }
 
 .submit-button-c{
@@ -375,7 +440,6 @@ text-decoration: underline;
     border: 2px solid var(--green);
     text-decoration: none;
     color: #fff;
-
     transition: background-color 0.3s ease-in,
                 border 0.3s ease-in;
 
@@ -430,14 +494,23 @@ text-decoration: underline;
   .ghost-button-home:hover,
   .ghost-button-home:active
    {
+      text-decoration: none;
       color: #fff;
       background-color: var(--green);
       border: 1px solid var(--green);
       transition: background-color 0.3s ease-in,
                 color 0.3s ease-in;
-
-
   }
+  .map{
+      display: flex;
+      height: 50vh;
+    width: 99.5vw;
+    position: relative;
+    left: 50%;
+    right: 50%;
+    margin-left: -50vw;
+    margin-right: -50vw;
+}
 
 
 
@@ -449,6 +522,10 @@ text-decoration: underline;
         display: grid;
         grid-template-columns: auto auto;
         margin-top: 20px;
+        max-width: unset;
+    }
+    .contact-grid{
+
         max-width: unset;
     }
 
@@ -466,6 +543,7 @@ text-decoration: underline;
         padding: 40px 80px;
 
     }
+
     .c-card__title{
         align-items: start;
     }
@@ -482,6 +560,13 @@ text-decoration: underline;
 
 
   @media (min-width: 960px){
+
+    .about-grid{
+        position: relative;
+        display: grid;
+        grid-template-columns: 7fr 5fr;
+        gap: 40px;
+    }
     .work-grid,
     .features-grid
     {
@@ -495,7 +580,11 @@ text-decoration: underline;
         display: flex;
         flex-direction: row;
         max-width: unset;
+    }
 
+
+    .features-grid__c{
+        margin: 10px 10px;
     }
 
 
@@ -505,13 +594,51 @@ text-decoration: underline;
 
     }
 
+
     .main-c__c{
+        width: 38%;
         align-items: flex-start;
         text-align: start;
-        left: 45%;
+        left: 40%;
     }
     .carousel-indicators{
         text-align: right;
+    }
+
+    .main-c__img{
+        opacity: 1;
+    }
+
+    .contact-grid{
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        max-width: unset;
+    }
+    .map {
+        grid-column-start: 1;
+        grid-column-end:   3;
+    }
+    .contact-c {
+        display: flex;
+        flex-direction: column;
+    }
+    .form-grid{
+        position: absolute;
+        right:0%;
+        top:40%;
+        width: 50%;
+        height: 60%;
+        background-color: #fff;
+        padding: 20px;
+    }
+    .submit-button-c{
+        padding: 0;
+    }
+    .submit-button-c .ghost-button{
+        top:unset;
+        position: relative;
+        left: unset;
+        transform: unset;
     }
 
   }
@@ -523,24 +650,7 @@ text-decoration: underline;
         grid-template-columns: auto auto auto auto;
         margin-top: 20px;
     }
-    .main-c__c{
-        left: 48%;
-        max-width: 40%;
-    }
-    .main-c__text{
-        max-width: ;
-    }
 
-    .contact-grid__c{
-        position: relative;
-        display: grid;
-        grid-template-columns: auto auto;
-        margin-top: 20px;
 
-    }
-
-    .work-grid, .workers-grid{
-
-    }
 
   }
