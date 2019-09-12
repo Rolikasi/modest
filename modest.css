@@ -22,11 +22,15 @@ body {
     padding: 0px 0px;
     justify-content: space-around;
 }
+.white-header{
+    background-color: var(--white);
+}
 
 .header__nav{
     padding: 15px 0px;
 
 }
+
 
 .header__logo{
     display: flex;
@@ -75,6 +79,11 @@ body {
     padding-bottom: 20px;
 }
 
+
+
+.carousel-indicators{
+    display:none;
+}
 
 .carousel-inner > .item > a > img, .carousel-inner > .item > img, .img-responsive, .thumbnail a > img, .thumbnail > img{
     max-width: unset;
@@ -171,7 +180,7 @@ body {
 
 .c-card__list li:before {
     position: absolute;
-    left:-5px;
+    left:-8px;
     padding: 10px 15px;
     content: counter(item);
     background: var(--green);
@@ -185,18 +194,22 @@ body {
 }
 .main-c__buttons{
     font-family: 'Quattrocento Sans';
+    margin-top: 20px;
 }
 .icon-grid{
+    display: flex;
+    flex-direction: row;
     margin: 10px 0px;
 }
 .fa {
-    background: var(--gray-light);
+    background: #c8cdd0;
     text-decoration: none;
     color: #fff;
     width: 60px;
     font-size: 20px;
     padding: 20px;
     text-align: center;
+    margin-right: 5px;
 }
 .fa:hover{
     opacity: 0.7;
@@ -220,11 +233,19 @@ body {
     position: relative;
     display: flex;
     flex-direction: column;
-    margin-top: 20px;
+    margin-top: 40px;
     max-width: 500px;
 
 }
-
+.services-grid__c,
+.workers-grid__c,
+.workers-grid,
+.features-grid,
+.features-grid__c,
+.work-grid,
+.work-grid__c{
+    margin-top: 20px;
+}
 
 
 .workers__icon-grid{
@@ -339,14 +360,10 @@ body {
 }
 
 .work-grid__c:hover .work-grid__image{
-    opacity: 0.7;
+    opacity: 0.5;
     transition: opacity 0.3s ease-in;
 }
 
-.work-grid__c:hover .work-grid__image{
-    opacity: 0.7;
-    transition: opacity 0.3s ease-in;
-}
 
 .work-grid__c:hover .fa-plus{
     opacity: 0.7;
@@ -373,11 +390,11 @@ body {
 
 .features-grid__image{
     position: relative;
-    height: 100%;
     width: 100%;
     opacity: 1;
     transition: opacity 0.3s ease-out;
     padding-bottom: 20px;
+    object-fit: cover;
 }
 .features-grid__c> .c-card__text{
     margin:15px 0px;
@@ -402,16 +419,30 @@ text-decoration: underline;
     border-radius: 5px;
     min-height: 25px;
     margin-bottom: 15px;
+    padding: 5px;
 }
 
 .form-grid__message{
     min-height: 50px ;
-    height: 58%;
+    height: 100px;
+
 }
 
 .submit-button-c{
     padding-top: 40px;
+    margin: 0px 10px;
 
+}
+.name, .email{
+    display: flex;
+    flex-direction: column;
+    margin: 0px 10px;
+    height: 65px;
+}
+.message {
+    margin: 0px 10px;
+    display: flex;
+    flex-direction: column;
 }
 
 .ghost-button {
@@ -422,7 +453,7 @@ text-decoration: underline;
 	transform: translate(-50%, -50%);
 	width: 150px;
 	font-size: 14px;
-	font-weight: 700;
+    font-weight: 700;
 	padding: 10px;
 	color: #fff;
     border: 2px solid #fff;
@@ -501,9 +532,15 @@ text-decoration: underline;
       transition: background-color 0.3s ease-in,
                 color 0.3s ease-in;
   }
+
+  .main-c__buttons .ghost-button {
+      margin-right: 5px;
+  }
   .map{
+      overflow: hidden;
+      object-fit: cover;
       display: flex;
-      height: 50vh;
+      height: 30vh;
     width: 99.5vw;
     position: relative;
     left: 50%;
@@ -511,6 +548,32 @@ text-decoration: underline;
     margin-left: -50vw;
     margin-right: -50vw;
 }
+.footer__icon-grid{
+    margin:0px;
+}
+.footer__icon-grid .fa{
+    background-color: var(--dark);
+    padding: 10px;
+    width: 40px;
+    margin: 2px;
+}
+
+.footer__icon-grid .fa:hover {
+    opacity: 1;
+    background-color: var(--gray);
+}
+
+.footer{
+    padding: 10px;
+}
+
+#about{
+    border: 1px solid var(--gray-light);
+
+}
+
+
+
 
 
 
@@ -521,10 +584,20 @@ text-decoration: underline;
         position: relative;
         display: grid;
         grid-template-columns: auto auto;
-        margin-top: 20px;
+        margin-top: 40px;
         max-width: unset;
     }
-    .contact-grid{
+
+    .features-grid{
+        display: grid;
+        grid-template-columns: auto;
+        max-width: unset;
+    }
+
+    .services-grid{
+        gap: 40px;
+    }
+    .contact-grid, .features-grid__c, .contact-c, .form-grid{
 
         max-width: unset;
     }
@@ -551,6 +624,14 @@ text-decoration: underline;
     .c-card .ghost-button{
         top: 94%;
     }
+    .c-card__c{
+        width: 65vw;
+    }
+
+
+.footer{
+    padding: 10px 80px;
+}
   }
 
 
@@ -560,28 +641,30 @@ text-decoration: underline;
 
 
   @media (min-width: 960px){
-
+    .carousel-indicators{
+        display:unset;
+    }
     .about-grid{
         position: relative;
         display: grid;
         grid-template-columns: 7fr 5fr;
         gap: 40px;
     }
-    .work-grid,
+
     .features-grid
     {
         position: relative;
         display: grid;
         grid-template-columns: auto auto auto;
-        margin-top: 20px;
+        margin-top: 40px;
         max-width: unset;
     }
     .workers-grid{
-        display: flex;
-        flex-direction: row;
-        max-width: unset;
+        justify-content: space-between;
     }
-
+    .services-grid{
+        gap: 40px;
+    }
 
     .features-grid__c{
         margin: 10px 10px;
@@ -589,10 +672,11 @@ text-decoration: underline;
 
 
     .c-card{
-        padding: 40px 20%;
+        padding: 60px 10%;
         align-items: center;
 
     }
+
 
 
     .main-c__c{
@@ -641,6 +725,14 @@ text-decoration: underline;
         transform: unset;
     }
 
+    .footer{
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
+    padding: 10px 10%;
+}
+
+
   }
 
   @media (min-width: 1280px) {
@@ -650,6 +742,63 @@ text-decoration: underline;
         grid-template-columns: auto auto auto auto;
         margin-top: 20px;
     }
+    .workers-grid{
+        position: relative;
+        display: grid;
+        grid-template-columns: auto auto auto auto;
+        margin-top: 20px;
+        max-width: unset;
+    }
+
+    .work-grid{
+        position: relative;
+        display: grid;
+        grid-template-columns: auto auto auto;
+        margin-top: 40px;
+        max-width: unset;
+
+    }
+
+    .form-grid{
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: 1fr 3fr 1fr;
+
+    }
+
+    .name, .email{
+        display: flex;
+        flex-direction: column;
+        margin: 0px 10px;
+        height: 65px;
+    }
+    .message {
+        margin: 0px 10px;
+        display: flex;
+        flex-direction: column;
+        grid-column-start: 1;
+        grid-column-end:   3;
+
+
+    }
+    .form-grid__message{
+        min-height: 50px ;
+        height: 100%;
+
+    }
+    .submit-button-c{
+        margin: 0px 10px;
+    }
+    .footer{
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
+    padding: 10px 15%;
+}
+    #contact{
+        margin-bottom: 20px;
+    }
+
 
 
 
