@@ -23,6 +23,7 @@ body {
     justify-content: space-around;
     transition: all 0.5s;
 
+
 }
 
 .white-header{
@@ -614,7 +615,7 @@ text-decoration: underline;
     .header{
         display: flex;
         position: fixed;
-        z-index: 10;
+        z-index: 9999;
         width: 100%;
     }
 
