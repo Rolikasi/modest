@@ -21,7 +21,10 @@ body {
     display: none;
     padding: 0px 0px;
     justify-content: space-around;
+    transition: all 0.5s;
+
 }
+
 .white-header{
     background-color: var(--white);
 }
@@ -124,6 +127,7 @@ body {
     font-family: "Open Sans";
     font-size: 16px;
     margin: 10px 0px;
+    color: var(--gray);
 
 }
 .c-card__text--s{
@@ -571,6 +575,8 @@ text-decoration: underline;
     border: 1px solid var(--gray-light);
 
 }
+
+
 
 
 
